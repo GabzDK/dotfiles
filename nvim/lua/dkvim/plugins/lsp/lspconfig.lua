@@ -9,7 +9,7 @@ return {
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+		local signs = { Error = " ", Warn = " ", Hint = "", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -24,6 +24,10 @@ return {
 		lspconfig.tsserver.setup({
 			capabilities = capabilities,
 		})
+        -- java
+        lspconfig.java_language_server.setup({
+            capabilities = capabilities,
+        })
 
 		-- rust_analyzer
 		lspconfig.rust_analyzer.setup({

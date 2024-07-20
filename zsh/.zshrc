@@ -9,16 +9,15 @@ export PATH="${PATH}:/home/kali/.local/bin"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.config/zsh/.oh-my-zsh"
 
-# now load zsh-syntax-highlighting plugin
-#ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_THEME="robbyrussell"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#b48ead,bold,underline"
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
   exec startx
 fi
 
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -71,7 +70,8 @@ alias \
 	sdn="shutdown -h now" \
 	e="$EDITOR" \
 	v="$EDITOR" \
-	p="pacman" 
+	p="pacman" \
+    netvm="virsh net-start default"
 
 
 # get fastest mirrors
@@ -97,8 +97,10 @@ alias jctl="journalctl -p 3 -xb"
 # github
 alias gl="git log --decorate=full" 
 alias patches="cd /home/kali/.config/dwm"
-alias dwed="cd /home/kali/.config/dwm && nvim config.def.h"
 
+# edit stuff
+alias dwed="cd /home/kali/.config/dwm && nvim config.def.h"
+alias edzsh="cd /home/kali/.config/zsh && nvim .zshrc"
 
 # Changing "ls" to "eza"
 alias ls='eza -al --color=always --group-directories-first' # my preferred listing
@@ -115,5 +117,5 @@ alias l...='eza -al --color=always --group-directories-first ../../../' # ls on 
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 colorscript --random 
+#colorscript -e  suckless
 
-source /home/kali/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
