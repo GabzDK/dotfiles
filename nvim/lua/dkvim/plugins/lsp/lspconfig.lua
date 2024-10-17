@@ -19,11 +19,6 @@ return {
 		lspconfig.pyright.setup({
 			capabilities = capabilities,
 		})
-
-		-- tsserver
-		lspconfig.tsserver.setup({
-			capabilities = capabilities,
-		})
         -- java
         lspconfig.java_language_server.setup({
             capabilities = capabilities,

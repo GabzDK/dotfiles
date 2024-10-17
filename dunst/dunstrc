@@ -2,6 +2,9 @@
 
 [global]
     ### Display ###
+    
+    background = "#191724"
+    foreground = "#e0def4"
 
     # Which monitor should the notifications be displayed on.
     monitor = 0
@@ -76,7 +79,8 @@
     separator_height = 1
 
     # Padding between text and separator.
-    padding = 8
+    padding = 10
+    gap_size = 3
 
     # Horizontal padding.
     horizontal_padding = 10
@@ -86,9 +90,8 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 0
+    frame_width = 1
     # Defines color of the frame around the notification window.
-    frame_color = "#8caaee"
 
     # Define a color for the separator.
     # possible values are:
@@ -110,7 +113,7 @@
 
     ### Text ###
 
-    font = Hack Nerd 10
+    font ="MesloLGSDZ Nerd Font Mono 10" 
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -228,7 +231,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+    corner_radius = 2
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -287,20 +290,18 @@
     # where there are multiple screens with very different dpi values.
     per_monitor_dpi = false
 
+
 [urgency_low]
-background = "#3b4252"
-foreground = "#e5e9f0"
+    background = "#26273d"
+    highlight = "#31748f"
 
 [urgency_normal]
-background = "#434c5e"
-foreground = "#e5e9f0"
+    background = "#362e3c"
+    highlight = "#f6c177"
 
 [urgency_critical]
-background = "#bf616a"
-foreground = "#eceff4"
-frame_color ="#bf616a"    
-# Icon for notifications with critical urgency, uncomment to enable
-    #new_icon = /path/to/icon
+    background = "#35263d"
+    highlight = "#eb6f92"
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
