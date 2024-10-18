@@ -21,6 +21,10 @@ return {
 			capabilities = capabilities,
 		})
 
+		-- tsserver
+		lspconfig.ts_ls.setup({
+			capabilities = capabilities,
+		})
         -- java
         lspconfig.java_language_server.setup({
             capabilities = capabilities,
