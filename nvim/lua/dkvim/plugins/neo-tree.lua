@@ -5,7 +5,7 @@ return {
     },
     opts = function ()
         vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "<C-q>", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<C-q>", ":<CR>", { noremap = true, silent = true })
         require("nvim-tree").setup({
             filters = { dotfiles = false },
             disable_netrw = true,

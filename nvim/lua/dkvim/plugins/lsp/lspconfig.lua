@@ -14,11 +14,13 @@ return {
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
+
         -- Managing language servers individually
 		-- pyright
 		lspconfig.pyright.setup({
 			capabilities = capabilities,
 		})
+
         -- java
         lspconfig.java_language_server.setup({
             capabilities = capabilities,
